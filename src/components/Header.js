@@ -19,6 +19,11 @@ const Header = () => {
     const menuHandler = () => {
         setShowNav(!showNav)
         }
+// Funkce pro odesláni e-mailu
+    const onEmailClick = () =>{
+            window.open("mailto:szkandera.r@seznam.cz?subject=SendMail&body=Description")
+          }
+        
 
   return (
     <div>
@@ -65,7 +70,7 @@ const Header = () => {
                 </div>
 
                 <div className="bg-blue-900 w-[300px] sm:bg-white sm:text-blue-900 sm:w-1/2 sm:p-4 sm:text-left p-4 sm:pl-8 text-white font-bold mx-auto ">
-                    <h2 className="text-xl text-center  border-b border-white sm:border-b sm:border-blue-900 mb-4 pb-2">Ahoj !!</h2> 
+                    <h2 className="text-xl text-center  border-b border-white sm:border-b sm:border-blue-900 mb-4 pb-2">Ahoj !</h2> 
                     <p className="border-b border-white sm:border-b sm:border-blue-900 pb-2">Jmenuji se Rosťa a chci se stát front-end vývojářem. Můžete si zde přečíst o mně bližší informace. 
                                                                                                 Na těchto stránkách chci s vámi sdílet své projekty.
                                                                                                 Pokud byste měli zájem o spolupráci, budu rád když mne kontaktujete.
@@ -85,9 +90,9 @@ const Header = () => {
 
         {/* Kontaktní patička na úvodní straně */}
         <div className="h-20 text-white  bg-blue-900 text-center sm:h-32 max-w-[600px] flex flex-row justify-center items-center mx-auto">
-            <FaGithub className="mt-8 sm:mt-16 cursor-pointer sm:hover:text-gray-400 ml-4" size={25} />
-            <FaLinkedinIn className="mt-8 sm:mt-16 cursor-pointer sm:hover:text-gray-400 ml-4" size={25} />
-            <MdEmail className="mt-8 sm:mt-16 cursor-pointer sm:hover:text-gray-400 ml-4" size={25} />
+            <a className="mt-8 sm:mt-16" href="https://github.com/RostislavSzkandera/" target="_blank" rel="noopener noreferrer"><FaGithub size={25} className="sm:hover:text-gray-400" /></a>
+            <a className="mt-8 sm:mt-16 ml-4" href="https://www.linkedin.com/in/rostislav-szkandera-0957a02b8/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn size={25} className="sm:hover:text-gray-400" /></a>
+            <MdEmail onClick={onEmailClick} className="mt-8 sm:mt-16 cursor-pointer sm:hover:text-gray-400 ml-4" size={25} />
         </div>
     </div>
 
