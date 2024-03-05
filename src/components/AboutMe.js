@@ -25,9 +25,9 @@ const AboutMe = () => {
             </div>
             {/* Moje fotky */}
             <div className="flex flex-row justify-center items-center mx-8">
-                <img className="w-36 xl:w-96 mx-2 sm:hover:scale-110 duration-1000" src={image1} alt="" />
-                <img className="w-36 xl:w-96 mx-2 sm:hover:scale-110 duration-1000" src={image2} alt="" />
-                <img className="w-36 xl:w-96 mx-2 sm:hover:scale-110 duration-1000" src={image3} alt="" />
+                <img className="w-36 xl:w-96 mx-1 sm:hover:scale-110 duration-1000" src={image1} alt="" />
+                <img className="w-36 xl:w-96 mx-1 sm:hover:scale-110 duration-1000" src={image2} alt="" />
+                <img className="w-36 xl:w-96 mx-1 sm:hover:scale-110 duration-1000" src={image3} alt="" />
             </div>
 
         </div>
