@@ -27,7 +27,7 @@ const App = () => {
         <Portfolio />
       </div>
       <div>
-        <Footer />
+        <Footer onEmailClick={onEmailClick} />
       </div>
     </div>
   )
