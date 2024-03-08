@@ -17,7 +17,7 @@ const Portfolio = () => {
             </div>
 
             {/* První projekt */}
-            <div className="flex flex-col  mb-4 mx-4">
+            <div className="flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
                     <img className="xl:hover:scale-110 duration-1000" src={project1} alt="" />
                 </div>
@@ -28,18 +28,21 @@ const Portfolio = () => {
                 </div>
             </div>
             {/* Druhý projekt */}
-            <div className=" flex flex-col  mb-4 mx-4">
+            <div className=" flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
                     <img className="xl:hover:scale-110 duration-1000" src={project2} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">TodoApp</h2>
                     <p className="mb-4 mx-4">TodoAppka, která pracuje s úložištěm local storage</p>
-                    <p className="pt-4 mx-4 text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://github.com/RostislavSzkandera/ReactToDoApp" target="_blank" rel="noopener noreferrer" >GitHub Kód</a></p>     
+                    <div className="flex flex-row justify-center items-center space-x-2">
+                        <p className="pt-4 text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://todoapp-szkandera.netlify.app/" target="_blank" rel="noopener noreferrer" >Náhled</a></p>
+                        <p className="pt-4  text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://github.com/RostislavSzkandera/ReactToDoApp" target="_blank" rel="noopener noreferrer" >GitHub Kód</a></p>          
+                    </div>
                 </div>
             </div>
             {/* Třetí projekt */}
-            <div className=" flex flex-col  mb-4 mx-4">
+            <div className=" flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
                     <img className="xl:hover:scale-110 duration-1000" src={project3} alt="" />
                 </div>
