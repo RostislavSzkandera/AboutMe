@@ -37,7 +37,7 @@ const Portfolio = () => {
                     <p className="mb-4 mx-4">TodoAppka, která pracuje s úložištěm local storage</p>
                     <div className="flex flex-row justify-center items-center space-x-2">
                         <p className="pt-4 text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://todoapp-szkandera.netlify.app/" target="_blank" rel="noopener noreferrer" >Náhled</a></p>
-                        <p className="pt-4  text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://github.com/RostislavSzkandera/ReactToDoApp" target="_blank" rel="noopener noreferrer" >GitHub Kód</a></p>          
+                        <p className="pt-4  text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://github.com/RostislavSzkandera/React-Todoapp" target="_blank" rel="noopener noreferrer" >GitHub Kód</a></p>          
                     </div>
                 </div>
             </div>
