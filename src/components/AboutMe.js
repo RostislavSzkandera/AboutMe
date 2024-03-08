@@ -26,15 +26,15 @@ const AboutMe = () => {
             {/* Moje fotky */}
             <div className="grid grid-cols-3 pb-4">
                 
-                <div className="mx-2 xl:hover:scale-110 duration-500">
+                <div className="mx-2">
                     <img className="" src={image1} alt="" />
                 </div>
                 
-                <div className="mx-2 xl:hover:scale-110 duration-500">
+                <div className="mx-2">
                     <img className="" src={image2} alt="" />
                 </div>
                 
-                <div className="mx-2 xl:hover:scale-110 duration-500">
+                <div className="mx-2">
                     <img className="" src={image3} alt="" />
                 </div>
             </div>

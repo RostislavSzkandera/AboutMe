@@ -19,7 +19,7 @@ const Portfolio = () => {
             {/* První projekt */}
             <div className="flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
-                    <img className="xl:hover:scale-110 duration-1000" src={project1} alt="" />
+                    <img className="" src={project1} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">Databáze filmů</h2>
@@ -30,7 +30,7 @@ const Portfolio = () => {
             {/* Druhý projekt */}
             <div className=" flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
-                    <img className="xl:hover:scale-110 duration-1000" src={project2} alt="" />
+                    <img className="" src={project2} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">TodoApp</h2>
@@ -44,7 +44,7 @@ const Portfolio = () => {
             {/* Třetí projekt */}
             <div className=" flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
-                    <img className="xl:hover:scale-110 duration-1000" src={project3} alt="" />
+                    <img className="" src={project3} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">Web o sobě</h2>
