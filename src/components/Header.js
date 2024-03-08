@@ -12,18 +12,14 @@ import { MdEmail } from "react-icons/md";
 
 
 
-const Header = () => {
+const Header = ({onEmailClick}) => {
     const [showNav, setShowNav] = useState(true)
 
 // Funkce pro otevření mobilního menu
     const menuHandler = () => {
         setShowNav(!showNav)
         }
-// Funkce pro odesláni e-mailu
-    const onEmailClick = () =>{
-            window.open("mailto:szkandera.r@seznam.cz?subject=SendMail&body=Description")
-          }
-        
+
 
   return (
     <div>
