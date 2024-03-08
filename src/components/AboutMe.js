@@ -5,7 +5,7 @@ import image3 from "../images/treti.jpg"
 
 const AboutMe = () => {
   return (
-    <div id="aboutMe" className="bg-gray-200 min-h-[800px] xl:h-[1000px] pt-40 sm:mt-96 ">
+    <div id="aboutMe" className="bg-gray-200 min-h-[700px] xl:min-h-[1000px] pt-40 sm:mt-96 ">
         <div className="md:w-3/4 mx-auto">
             
             <h2 className="text-xl lg:text-2xl xl:text-3xl text-center border-b border-gray-400 w-[30%] mx-auto pb-2 mb-8 font-bold uppercase ">O mně</h2>
@@ -24,10 +24,19 @@ const AboutMe = () => {
                 </p>
             </div>
             {/* Moje fotky */}
-            <div className="flex flex-row justify-center items-center mx-8">
-                <img className="w-36 xl:w-96 mx-1 sm:hover:scale-110 duration-1000" src={image1} alt="" />
-                <img className="w-36 xl:w-96 mx-1 sm:hover:scale-110 duration-1000" src={image2} alt="" />
-                <img className="w-36 xl:w-96 mx-1 sm:hover:scale-110 duration-1000" src={image3} alt="" />
+            <div className="grid grid-cols-3 pb-4">
+                
+                <div className="mx-2 xl:hover:scale-110 duration-500">
+                    <img className="" src={image1} alt="" />
+                </div>
+                
+                <div className="mx-2 xl:hover:scale-110 duration-500">
+                    <img className="" src={image2} alt="" />
+                </div>
+                
+                <div className="mx-2 xl:hover:scale-110 duration-500">
+                    <img className="" src={image3} alt="" />
+                </div>
             </div>
 
         </div>
