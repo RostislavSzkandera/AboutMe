@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
-import LoadingPage from "./components/LoadingPage"
+
 import Header from "./components/Header"
 import AboutMe from "./components/AboutMe"
 import Portfolio from "./components/Portfolio"
@@ -14,14 +14,9 @@ import {FaArrowCircleUp} from "react-icons/fa"
 
 const App = () => {
   const [visible, setVisible] = useState(false)
-  const [loading, setLoading] = useState(true)
+
 
   
-  useEffect( () => {
-    setTimeout( () => {
-      setLoading(false)
-    }, 2000)
-  })
 
   // Funkce pro scroll na začátek stránky
   const toggleVisible = () => { 
@@ -53,33 +48,34 @@ const App = () => {
   
 
   
-  
- if(loading) { return <LoadingPage /> 
- } else {
-  return  <div className="overflow-hidden">
-  <div>
-    {
-      visible && <button className="fixed right-5 bottom-5" onClick={scrollToTop}><FaArrowCircleUp className="text-[40px] text-gray-700" /></button>
-    }
-  </div>
 
+  return  (
   
-  
-  
-  <div>
-    <Header onEmailClick={onEmailClick} />
+  <div className="overflow-hidden">
+      <div>
+        {
+          visible && <button className="fixed right-5 bottom-5" onClick={scrollToTop}><FaArrowCircleUp className="text-[40px] text-gray-700" /></button>
+        }
+      </div>
+
+      
+      
+      
+      <div>
+        <Header onEmailClick={onEmailClick} />
+      </div>
+      <div>
+        <AboutMe />
+      </div>
+      <div>
+        <Portfolio />
+      </div>
+      <div>
+        <Footer onEmailClick={onEmailClick} />
+      </div>
   </div>
-  <div>
-    <AboutMe />
-  </div>
-  <div>
-    <Portfolio />
-  </div>
-  <div>
-    <Footer onEmailClick={onEmailClick} />
-  </div>
-</div>
+  )
  }
-}
+
 
 export default App
