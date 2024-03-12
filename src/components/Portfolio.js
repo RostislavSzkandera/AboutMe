@@ -11,7 +11,7 @@ const Portfolio = () => {
                 <h2 className="text-xl lg:text-2xl xl:text-3xl text-center border-b border-gray-400 w-[30%] mx-auto pb-2 mb-8 font-bold uppercase">Portfolio</h2>
                 <p className="pb-4 mx-2 text-[14px] md:text-xl lg:text-xl">
                     Zde mám tři projekty z poslední doby.
-                    Všechno je vytvořeno Reactu. Snažím se aby vše bylo responzivní.
+                    Všechno je vytvořeno v Reactu. Snažím se aby vše bylo responzivní.
                     Projekty jsem styloval pomocí tailwindu
                 </p>
             </div>

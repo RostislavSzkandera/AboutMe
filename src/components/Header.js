@@ -67,7 +67,7 @@ const Header = ({onEmailClick}) => {
         
         
         {/* Úvodní strana */}
-        <div className="bg-blue-900 flex flex-col justify-center items-center h-[900px] sm:h-[500px] mx-auto ">
+        <div className="bg-blue-900 flex flex-col justify-center items-center h-[950px] sm:h-[500px] mx-auto ">
             <div className="flex flex-col w-full sm:w-[600px] h-[700px] sm:h-[400px] sm:flex sm:flex-row mt-[98px] px-8 sm:px-0">
                 <div className="w-[300px] h-1/2 sm:w-1/2 sm:h-[500px] mx-auto">
                 <AsyncImage
