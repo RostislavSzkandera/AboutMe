@@ -1,5 +1,7 @@
+
 import { Link } from "react-scroll"
 import { useState } from "react"
+
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -12,6 +14,8 @@ import { MdEmail } from "react-icons/md";
 
 
 
+
+
 const Header = ({onEmailClick}) => {
     const [showNav, setShowNav] = useState(true)
 
@@ -20,6 +24,8 @@ const Header = ({onEmailClick}) => {
         setShowNav(!showNav)
         }
 
+    
+   
 
 
   return (
@@ -63,7 +69,7 @@ const Header = ({onEmailClick}) => {
         <div className="bg-blue-900 flex flex-col justify-center items-center sm:h-[500px] mx-auto ">
             <div className="flex flex-col w-full sm:w-[600px] h-[700px] sm:h-[400px] sm:flex sm:flex-row mt-[98px] px-8 sm:px-0">
                 <div className="w-[300px] h-1/2 sm:w-1/2 sm:h-[500px] mx-auto">
-                    <img src={image} alt="" />
+                    <img loading="lazy"  src={image} alt="" />
                 </div>
 
                 <div className="bg-blue-900 w-[300px] sm:bg-white sm:text-blue-900 sm:w-1/2 sm:p-4 sm:text-left p-4 sm:pl-8 text-white font-bold mx-auto ">
