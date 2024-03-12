@@ -51,7 +51,7 @@ const Header = ({onEmailClick}) => {
 
 
             {/* Menu pro mobilní zařízení */}
-            <nav className={showNav? "fixed left-[-100%] w-[100%] h-[100%]  ease-in-out duration-1000" : "bg-white border border-white fixed left-0 top-0 w-[100%] h-[100%] uppercase ease-in-out  duration-1000 z-20  md:hidden " }>
+            <nav className={showNav? "fixed left-[-100%] w-[100%] h-[100%]  ease-in-out duration-1000 z-20" : "bg-white border border-white fixed left-0 top-0 w-[100%] h-[100%] uppercase ease-in-out  duration-1000 z-20  md:hidden " }>
                 <ul className="flex flex-col space-y-12 mt-80 uppercase tracking-wider font-bold ">
                     <li className="border-b border-black w-full text-center mx-auto pb-2"><Link onClick={menuHandler} className="cursor-pointer"  to="nav" smooth duration={1000}>Domů</Link></li>
                     <li className="border-b border-black w-full text-center mx-auto pb-2"><Link onClick={menuHandler} className="cursor-pointer"  to="aboutMe" smooth duration={1000}>O mně</Link></li>

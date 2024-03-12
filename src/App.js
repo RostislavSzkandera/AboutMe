@@ -54,7 +54,7 @@ const App = () => {
   <div className="overflow-hidden">
       <div>
         {
-          visible && <button className="fixed right-5 bottom-5" onClick={scrollToTop}><FaArrowCircleUp className="text-[40px] text-gray-700" /></button>
+          visible && <button className="fixed right-5 bottom-5 z-40" onClick={scrollToTop}><FaArrowCircleUp className="text-[40px] text-gray-700" /></button>
         }
       </div>
 
