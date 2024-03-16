@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 import Header from "./components/Header"
@@ -37,7 +37,10 @@ const App = () => {
     })
   }
   
-  window.addEventListener('scroll', toggleVisible)
+  useEffect( () => {
+    window.addEventListener('scroll', toggleVisible)
+    return () => window.removeEventListener("scroll", toggleVisible)
+  })
   
 
 
