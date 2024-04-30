@@ -21,7 +21,7 @@ const AboutMe = () => {
                     k němu velmi blízký vztah a snažím se ve svém volném čase neustále prohlubovat své znalosti 
                     samostudiem. V současné době mám základy <b>HTML, CSS (Tailwind), Javascript, Git</b> a především <b>React</b>. S těmito 
                     značkovacími a programovacími jazyky jsem se začal seznamovat v březnu roku 2023. Nejsou mi cizí pojmy jako Node.Js, Next.Js,
-                    MongoDB, SQL, Postman, Bootstrap atd.  Mými koníčky jsou turistika, počítače a šachy.
+                    MongoDB, Typescript, SQL, Postman, Bootstrap atd.  Mými koníčky jsou turistika, počítače a šachy.
                 </p>
             </div>
             {/* Moje fotky */}

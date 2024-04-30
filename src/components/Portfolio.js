@@ -1,6 +1,7 @@
-import project1 from "../images/movieapp.png"
-import project2 from "../images/todoapp.png"
-import project3 from "../images/osobe.png"
+import project from "../images/novyprojekt.png"
+import project2 from "../images/movieapp.png"
+import project3 from "../images/todoapp.png"
+import project4 from "../images/osobe.png"
 
 
 const Portfolio = () => {
@@ -10,16 +11,35 @@ const Portfolio = () => {
             <div>
                 <h2 className="text-xl lg:text-2xl xl:text-3xl text-center border-b border-gray-400 w-[30%] mx-auto pb-2 mb-8 font-bold uppercase">Portfolio</h2>
                 <p className="pb-4 mx-2 text-[14px] md:text-xl lg:text-xl">
-                    Zde mám tři projekty z poslední doby.
+                    Zde mám čtyři projekty z poslední doby.
                     Všechno je vytvořeno v Reactu. Snažím se aby vše bylo responzivní.
-                    Projekty jsem styloval pomocí tailwindu
+                    Projekty jsem styloval pomocí tailwindu.
+                    Hlavní a nejnovější projekt, je upgrade mého minulého projektu o filmech.
+                    
                 </p>
             </div>
-
             {/* První projekt */}
             <div className="flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
-                    <img className="" src={project1} alt="" />
+                    <img className="" src={project} alt="" />
+                </div>
+                <div className="bg-blue-200">
+                    <h2 className="font-bold mt-2 mb-2">Databáze filmů 2</h2>
+                    <p className="mb-4 mx-4">Toto je můj nejnovější projekt v Reactu. Mám ho i na své doméně s hostingem od firebase.
+                    Na tomto webu se můžete přihlásit a přihlášený uživatel má další možnosti co může dělat, jako přidávat, mazat filmy nebo
+                    komentovat. Backend je vytvořen s firebase.
+                    </p>
+                    <div className="flex flex-row justify-center items-center space-x-2">
+                        <p className="pt-4 text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://www.szkandera-portfolio.cz/" target="_blank" rel="noopener noreferrer" >Náhled</a></p>
+                        <p className="pt-4  text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://github.com/RostislavSzkandera/Movies-Database" target="_blank" rel="noopener noreferrer" >GitHub Kód</a></p>          
+                    </div>
+                </div>
+            </div>
+
+            {/* Druhý projekt */}
+            <div className="flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
+                <div>
+                    <img className="" src={project2} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">Databáze filmů</h2>
@@ -27,10 +47,10 @@ const Portfolio = () => {
                     <p className="pt-4 mx-4 text-xl sm:text-xl md:text-2xl pb-8"><a className="bg-blue-400 p-2 rounded-xl text-white border border-white sm:hover:bg-blue-500" href="https://github.com/RostislavSzkandera/Database" target="_blank" rel="noopener noreferrer" >GitHub Kód</a></p>     
                 </div>
             </div>
-            {/* Druhý projekt */}
+            {/* Třetí projekt */}
             <div className=" flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
-                    <img className="" src={project2} alt="" />
+                    <img className="" src={project3} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">TodoApp</h2>
@@ -41,10 +61,10 @@ const Portfolio = () => {
                     </div>
                 </div>
             </div>
-            {/* Třetí projekt */}
+            {/* Čtvrtý projekt */}
             <div className=" flex flex-col  mb-4 mx-4 border-b border-gray-400 pb-4">
                 <div>
-                    <img className="" src={project3} alt="" />
+                    <img className="" src={project4} alt="" />
                 </div>
                 <div className="bg-blue-200">
                     <h2 className="font-bold mt-2 mb-2">Web o sobě</h2>
