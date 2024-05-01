@@ -85,15 +85,15 @@ const Header = ({onEmailClick}) => {
                                                                                                 Na těchto stránkách chci s vámi sdílet své projekty.
                                                                                                 Pokud byste měli zájem o spolupráci, budu rád když mne kontaktujete.
                     </p>
-                    <p className="text-center border-b border-white sm:border-b sm:border-blue-900 mt-2 pb-2">
-                        <ul className="uppercase">
-                            <li>html</li>
-                            <li>css</li>
-                            <li>react</li>
-                            <li>javascript</li>
-                            <li>tailwind</li>    
-                        </ul>
-                    </p>
+                    
+                    <ul className="text-center border-b border-white sm:border-b sm:border-blue-900 mt-2 pb-2 uppercase">
+                        <li>html</li>
+                        <li>css</li>
+                        <li>react</li>
+                        <li>javascript</li>
+                        <li>tailwind</li>    
+                    </ul>
+                    
                 </div>
             </div>
         </div>

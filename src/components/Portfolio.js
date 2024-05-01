@@ -12,7 +12,7 @@ const Portfolio = () => {
                 <h2 className="text-xl lg:text-2xl xl:text-3xl text-center border-b border-gray-400 w-[30%] mx-auto pb-2 mb-8 font-bold uppercase">Portfolio</h2>
                 <p className="pb-4 mx-2 text-[14px] md:text-xl lg:text-xl">
                     Zde mám čtyři projekty z poslední doby.
-                    Všechno je vytvořeno v Reactu. Snažím se aby vše bylo responzivní.
+                    Všechno je vytvořeno v Reactu. Snažím se aby, vše bylo responzivní.
                     Projekty jsem styloval pomocí tailwindu.
                     Hlavní a nejnovější projekt, je upgrade mého minulého projektu o filmech.
                     
@@ -24,7 +24,7 @@ const Portfolio = () => {
                     <img className="" src={project} alt="" />
                 </div>
                 <div className="bg-blue-200">
-                    <h2 className="font-bold mt-2 mb-2">Databáze filmů 2</h2>
+                    <h2 className="font-bold mt-2 mb-2">Databáze filmů Upgrade</h2>
                     <p className="mb-4 mx-4">Toto je můj nejnovější projekt v Reactu. Mám ho i na své doméně s hostingem od firebase.
                     Na tomto webu se můžete přihlásit a přihlášený uživatel má další možnosti co může dělat, jako přidávat, mazat filmy nebo
                     komentovat. Backend je vytvořen s firebase.
