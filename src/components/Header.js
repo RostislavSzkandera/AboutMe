@@ -1,22 +1,29 @@
-import { Link } from "react-scroll";
-import { useState } from "react";
-import ReactGA from "react-ga4"; // Import GA4
+import { Link } from "react-scroll"
+import { useState, useEffect } from "react"
+import ReactGA from "react-ga4" // Import GA4 knihovny
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
-import image from "../images/image0podalsikompresi.webp";
+import image from "../images/image0podalsikompresi.webp"
 
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import { AsyncImage } from "loadable-image";
-import { Blur } from "transitions-kit";
+import { AsyncImage } from 'loadable-image'
+import { Blur } from 'transitions-kit'
 
 const Header = ({ onEmailClick }) => {
   const [showNav, setShowNav] = useState(true);
 
-  // Funkce pro otevření/zavření mobilního menu
+  // Inicializace Google Analytics (GA4)
+  useEffect(() => {
+    ReactGA.initialize("YOUR_GA4_MEASUREMENT_ID");  // Sem vlož ID měření GA4
+    ReactGA.send("pageview");  // Posílá první zobrazení stránky
+  }, []);
+
+  // Funkce pro otevření mobilního menu
   const menuHandler = () => {
     setShowNav(!showNav);
   };
@@ -41,69 +48,126 @@ const Header = ({ onEmailClick }) => {
 
   return (
     <div id="nav">
-      {/* Menu pro PC */}
-      <nav className="bg-gray-100 fixed w-full h-16 flex flex-row justify-between items-center font-bold z-40">
-        <h2 className="text-sm ml-4 p-2">Szkandera</h2>
-        <ul className="hidden md:flex flex-row uppercase tracking-wider">
-          <li>
-            <Link
-              className="mr-4 p-2 cursor-pointer hover:bg-gray-400 hover:rounded-xl"
-              to="nav"
-              smooth
-              duration={1000}
-              onClick={() => handleNavClick("Home")}
-            >
-              Domů
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="mr-4 p-2 cursor-pointer hover:bg-gray-400 hover:rounded-xl"
-              to="aboutMe"
-              smooth
-              duration={1000}
-              onClick={() => handleNavClick("About Me")}
-            >
-              O mně
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="mr-4 p-2 cursor-pointer hover:bg-gray-400 hover:rounded-xl"
-              to="portfolio"
-              smooth
-              duration={1000}
-              onClick={() => handleNavClick("Portfolio")}
-            >
-              Portfolio
-            </Link>
-          </li>
-        </ul>
+      <div>
+        {/* Menu pro PC */}
+        <nav className="bg-gray-100 fixed w-full h-16 flex flex-row justify-between items-center font-bold z-40">
+          <h2 className="text-sm ml-4 p-2">Szkandera</h2>
+          <ul className="hidden md:flex flex-row uppercase tracking-wider">
+            <li>
+              <Link
+                className="mr-4 p-2 cursor-pointer hover:bg-gray-400 hover:rounded-xl"
+                to="nav"
+                smooth
+                duration={1000}
+                onClick={() => handleNavClick("Home")}
+              >
+                Domů
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="mr-4 p-2 cursor-pointer hover:bg-gray-400 hover:rounded-xl"
+                to="aboutMe"
+                smooth
+                duration={1000}
+                onClick={() => handleNavClick("About Me")}
+              >
+                O mně
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="mr-4 p-2 cursor-pointer hover:bg-gray-400 hover:rounded-xl"
+                to="portfolio"
+                smooth
+                duration={1000}
+                onClick={() => handleNavClick("Portfolio")}
+              >
+                Portfolio
+              </Link>
+            </li>
+          </ul>
 
-        {/* Zobrazení ikony menu */}
-        <div className="block mr-4 cursor-pointer md:hidden">
-          {showNav ? (
-            <GiHamburgerMenu size={25} onClick={menuHandler} />
-          ) : (
-            <AiOutlineClose size={25} onClick={menuHandler} />
-          )}
-        </div>
-      </nav>
+          {/* Zobrazení ikony menu */}
+          <div className="block mr-4 cursor-pointer md:hidden">
+            {showNav ? (
+              <GiHamburgerMenu size={25} onClick={menuHandler} />
+            ) : (
+              <AiOutlineClose size={25} onClick={menuHandler} />
+            )}
+          </div>
+        </nav>
+
+        {/* Menu pro mobilní zařízení */}
+        <nav
+          className={
+            showNav
+              ? "fixed left-[-100%] w-[100%] h-[100%] ease-in-out duration-1000 z-20"
+              : "bg-white border border-white fixed left-0 top-0 w-[100%] h-[100%] uppercase ease-in-out duration-1000 z-20 md:hidden"
+          }
+        >
+          <ul className="flex flex-col space-y-12 mt-80 uppercase tracking-wider font-bold ">
+            <li className="border-b border-black w-full text-center mx-auto pb-2">
+              <Link
+                onClick={() => {
+                  handleNavClick("Home");
+                  menuHandler();
+                }}
+                className="cursor-pointer"
+                to="nav"
+                smooth
+                duration={1000}
+              >
+                Domů
+              </Link>
+            </li>
+            <li className="border-b border-black w-full text-center mx-auto pb-2">
+              <Link
+                onClick={() => {
+                  handleNavClick("About Me");
+                  menuHandler();
+                }}
+                className="cursor-pointer"
+                to="aboutMe"
+                smooth
+                duration={1000}
+              >
+                O mně
+              </Link>
+            </li>
+            <li className="border-b border-black w-full text-center mx-auto pb-2">
+              <Link
+                onClick={() => {
+                  handleNavClick("Portfolio");
+                  menuHandler();
+                }}
+                className="cursor-pointer"
+                to="portfolio"
+                smooth
+                duration={1000}
+              >
+                Portfolio
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       {/* Úvodní strana */}
       <div className="bg-blue-900 flex flex-col justify-center items-center h-[950px] sm:h-[500px] mx-auto ">
         <div className="flex flex-col w-full sm:w-[600px] h-[700px] sm:h-[400px] sm:flex sm:flex-row mt-[98px] px-8 sm:px-0">
           <div className="w-[300px] h-1/2 sm:w-1/2 sm:h-[500px] mx-auto">
-            <AsyncImage src={image} style={{ width: 300, height: 400 }} Transition={Blur} />
+            <AsyncImage
+              src={image}
+              style={{ width: 300, height: 400 }}
+              Transition={Blur}
+            />
           </div>
 
           <div className="bg-blue-900 w-[300px] sm:bg-white sm:text-blue-900 sm:w-1/2 sm:p-4 sm:text-left p-4 sm:pl-8 text-white font-bold mx-auto mt-12 sm:mt-0 ">
-            <h2 className="text-xl text-center border-b border-white sm:border-b sm:border-blue-900 mb-4 pb-2">
-              Ahoj !
-            </h2>
+            <h2 className="text-xl text-center border-b border-white sm:border-b sm:border-blue-900 mb-4 pb-2">Ahoj !</h2>
             <p className="border-b border-white sm:border-b sm:border-blue-900 pb-2">
-              Jmenuji se Rosťa a chci se stát front-end vývojářem. Můžete si zde přečíst o mně bližší informace.
-              Na těchto stránkách chci s vámi sdílet své projekty. Pokud byste měli zájem o spolupráci, budu rád když mne kontaktujete.
+              Jmenuji se Rosťa a chci se stát front-end vývojářem. Můžete si zde přečíst o mně bližší informace. Na těchto stránkách chci s vámi sdílet své projekty. Pokud byste měli zájem o spolupráci, budu rád když mne kontaktujete.
             </p>
 
             <ul className="text-center border-b border-white sm:border-b sm:border-blue-900 mt-2 pb-2 uppercase">
@@ -118,7 +182,7 @@ const Header = ({ onEmailClick }) => {
       </div>
 
       {/* Kontaktní patička na úvodní straně */}
-      <div className="h-20 text-white bg-blue-900 text-center sm:h-32 max-w-[600px] flex flex-row justify-center items-center mx-auto">
+      <div className="h-20 text-white  bg-blue-900 text-center sm:h-32 max-w-[600px] flex flex-row justify-center items-center mx-auto ">
         <a
           className="mt-8 sm:mt-16"
           href="https://github.com/RostislavSzkandera/"
@@ -129,7 +193,6 @@ const Header = ({ onEmailClick }) => {
         >
           <FaGithub size={25} className="sm:hover:text-gray-400" />
         </a>
-
         <a
           className="mt-8 sm:mt-16 ml-4"
           href="https://www.linkedin.com/in/rostislav-szkandera-0957a02b8/"
@@ -140,7 +203,6 @@ const Header = ({ onEmailClick }) => {
         >
           <FaLinkedinIn size={25} className="sm:hover:text-gray-400" />
         </a>
-
         <MdEmail
           onClick={() => {
             ReactGA.send("event", {
@@ -148,7 +210,7 @@ const Header = ({ onEmailClick }) => {
               action: "Clicked Email Button",
               label: "Email Contact",
             });
-            onEmailClick(); // Spustí původní funkci
+            onEmailClick();
           }}
           className="mt-8 sm:mt-16 cursor-pointer sm:hover:text-gray-400 ml-4"
           size={25}
