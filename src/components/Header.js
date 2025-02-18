@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 import ReactGA from "react-ga4"; // Import GA4 knihovny
 
 import { GiHamburgerMenu } from "react-icons/gi";
