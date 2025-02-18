@@ -93,6 +93,14 @@ const styles = {
 
 const App = () => {
   const [visible, setVisible] = useState(false);
+  const [isConsentGiven, setIsConsentGiven] = useState(false); // Stav pro souhlas s cookies
+
+  useEffect(() => {
+    const cookieConsent = Cookies.get("cookie-consent");
+    if (cookieConsent === "true") {
+      setIsConsentGiven(true); // Pokud uživatel souhlasil
+    }
+  }, []);
 
   // Funkce pro inicializaci Google Analytics
   const initializeGA = () => {
@@ -106,8 +114,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    trackPageView(window.location.pathname); // Sleduje načtení stránky
-  }, []);
+    if (isConsentGiven) {
+      initializeGA(); // Inicializuje GA pouze, pokud souhlas byl dán
+      trackPageView(window.location.pathname); // Sleduje načtení stránky pouze při souhlasu
+    }
+  }, [isConsentGiven]); // Aktivace pouze při změně souhlasu
 
   // Funkce pro scroll na začátek stránky
   const toggleVisible = () => {
@@ -138,7 +149,7 @@ const App = () => {
 
   return (
     <div className="overflow-hidden">
-      <CookiesBanner onAccept={initializeGA} onReject={rejectGA} /> {/* Přidání cookies banneru */}
+      <CookiesBanner onAccept={() => setIsConsentGiven(true)} onReject={rejectGA} /> {/* Přidání cookies banneru */}
 
       <div>
         {visible && (
