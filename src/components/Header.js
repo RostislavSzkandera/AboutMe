@@ -12,8 +12,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-// import { AsyncImage } from 'loadable-image'
-// import { Blur } from 'transitions-kit'
+import { AsyncImage } from 'loadable-image'
+import { Blur } from 'transitions-kit'
 
 
 
@@ -70,15 +70,15 @@ const Header = ({onEmailClick}) => {
         <div className="bg-blue-900 flex flex-col justify-center items-center h-[950px] sm:h-[500px] mx-auto ">
             <div className="flex flex-col w-full sm:w-[600px] h-[700px] sm:h-[400px] sm:flex sm:flex-row mt-[98px] px-8 sm:px-0">
                 <div className="w-[300px] h-1/2 sm:w-1/2 sm:h-[500px] mx-auto">
-                {/* <AsyncImage
+                <AsyncImage
                     src={image}
                     style={{ width: 300, height: 400}}
                     Transition={Blur}
-                /> */}
-                <img style={{ width: 300, height: 400}} 
+                />
+                {/* <img style={{ width: 300, height: 400}} 
                  fetchpriority="high" 
                  loading="eager" src={image} alt="" />
-                        
+                         */}
 
                 </div>
 
@@ -103,8 +103,8 @@ const Header = ({onEmailClick}) => {
 
         {/* Kontaktní patička na úvodní straně */}
         <div className="h-20 text-white  bg-blue-900 text-center sm:h-32 max-w-[600px] flex flex-row justify-center items-center mx-auto ">
-            <a className="mt-8 sm:mt-16" href="https://github.com/RostislavSzkandera/" target="_blank" rel="noopener noreferrer"><FaGithub size={25} className="sm:hover:text-gray-400" /></a>
-            <a className="mt-8 sm:mt-16 ml-4" href="https://www.linkedin.com/in/rostislav-szkandera-0957a02b8/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn size={25} className="sm:hover:text-gray-400" /></a>
+            <a className="mt-8 sm:mt-16" href="https://github.com/RostislavSzkandera/" target="_blank" aria-label="Navštivte můj GitHub profil" rel="noopener noreferrer"><FaGithub size={25} className="sm:hover:text-gray-400" /></a>
+            <a className="mt-8 sm:mt-16 ml-4" href="https://www.linkedin.com/in/rostislav-szkandera-0957a02b8/" target="_blank" aria-label="Navštivte můj LinkedIn profil" rel="noopener noreferrer"><FaLinkedinIn size={25} className="sm:hover:text-gray-400" /></a>
             <MdEmail onClick={onEmailClick} className="mt-8 sm:mt-16 cursor-pointer sm:hover:text-gray-400 ml-4" size={25} />
         </div>
     </div>
