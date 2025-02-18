@@ -32,6 +32,7 @@ const AboutMe = () => {
                     src={image1}
                     style={{ width: 300, height: 400}}
                     Transition={Blur}
+                    loading="lazy"
                 />
                 </div>
                 
@@ -40,6 +41,8 @@ const AboutMe = () => {
                     src={image2}
                     style={{ width: 300, height: 400}}
                     Transition={Blur}
+                    loading="lazy"
+                    
                 />
                 </div>
                 
@@ -48,6 +51,7 @@ const AboutMe = () => {
                     src={image3}
                     style={{ width: 300, height: 400}}
                     Transition={Blur}
+                    loading="lazy"
                 />
                 </div>
             </div>
