@@ -70,11 +70,14 @@ const Header = ({onEmailClick}) => {
         <div className="bg-blue-900 flex flex-col justify-center items-center h-[950px] sm:h-[500px] mx-auto ">
             <div className="flex flex-col w-full sm:w-[600px] h-[700px] sm:h-[400px] sm:flex sm:flex-row mt-[98px] px-8 sm:px-0">
                 <div className="w-[300px] h-1/2 sm:w-1/2 sm:h-[500px] mx-auto">
-                <AsyncImage
+                {/* <AsyncImage
                     src={image}
                     style={{ width: 300, height: 400}}
                     Transition={Blur}
-                />
+                /> */}
+                <img style={{ width: 300, height: 400}} 
+                 fetchpriority="high" 
+                 loading="eager" src={image} alt="" />
                         
 
                 </div>
