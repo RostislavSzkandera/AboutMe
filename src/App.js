@@ -46,10 +46,10 @@ const CookiesBanner = ({ onAccept, onReject }) => {
     <div>
       {/* Ztmavení obrazovky */}
       {isDarkened && <div style={styles.overlay}></div>}
-      
+
       <div style={styles.banner}>
         <p>Na tomto webu používáme cookies pro zlepšení služby. Pokračováním souhlasíte s jejich používáním.</p>
-        
+
         {/* Tlačítka pro souhlas a odmítnutí */}
         <div>
           <button className="bg-red-500 text-white p-2 rounded mr-4" onClick={handleAccept}>
@@ -139,7 +139,7 @@ const App = () => {
   return (
     <div className="overflow-hidden">
       <CookiesBanner onAccept={initializeGA} onReject={rejectGA} /> {/* Přidání cookies banneru */}
-      
+
       <div>
         {visible && (
           <button className="fixed right-5 bottom-5 z-40" onClick={scrollToTop}>
