@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ReactGA from "react-ga4"; // Import GA4
+
 import Cookies from "js-cookie"; // Knihovna pro práci s cookies
 
 import Header from "./components/Header";
@@ -7,7 +7,7 @@ import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 
-import { trackPageView } from "./utils/analytics"; // Import trackování
+import { initializeGA, trackPageView } from "./utils/analytics"; // Import trackování
 
 import { FaArrowCircleUp } from "react-icons/fa";
 
@@ -37,7 +37,7 @@ const CookiesBanner = ({ onAccept, onReject }) => {
     Cookies.set("cookie-consent", "false", { expires: 365 });
     setIsVisible(false); // Skrýt banner
     setIsDarkened(false); // Zrušení ztmavení obrazovky
-    onReject(); // Pokud odmítne, GA nebude inicializováno
+    onReject(); // Pokud odmítnete, GA nebude inicializováno
   };
 
   if (!isVisible) return null; // Pokud banner není vidět, nic nezobrazíme
@@ -96,9 +96,9 @@ const App = () => {
   const [isConsentGiven, setIsConsentGiven] = useState(false); // Stav pro souhlas s cookies
 
   // Funkce pro inicializaci Google Analytics
-  const initializeGA = () => {
-    const trackingId = "G-TQN22C7RSV"; // Změňte na svůj Google Analytics ID
-    ReactGA.initialize(trackingId); // Inicializace Google Analytics
+  const initializeAnalytics = () => {
+    const trackingId = "G-TQN22C7RSV"; // Změňte na své vlastní ID
+    initializeGA(trackingId); // Inicializace Google Analytics
     trackPageView(window.location.pathname); // Sleduje načtení stránky pouze při souhlasu
   };
 
@@ -119,7 +119,7 @@ const App = () => {
   // Aktivace Google Analytics pouze po souhlasu
   useEffect(() => {
     if (isConsentGiven) {
-      initializeGA(); // Inicializuje GA pouze, pokud souhlas byl dán
+      initializeAnalytics(); // Inicializuje GA pouze, pokud souhlas byl dán
     }
   }, [isConsentGiven]);
 
