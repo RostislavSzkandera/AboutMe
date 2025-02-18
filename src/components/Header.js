@@ -12,8 +12,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import { AsyncImage } from 'loadable-image'
-import { Blur } from 'transitions-kit'
+// import { AsyncImage } from 'loadable-image'
+// import { Blur } from 'transitions-kit'
 
 
 
