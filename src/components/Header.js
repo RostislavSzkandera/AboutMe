@@ -17,11 +17,11 @@ import { Blur } from 'transitions-kit';
 const Header = ({ onEmailClick }) => {
   const [showNav, setShowNav] = useState(true);
 
-  // Inicializace Google Analytics (GA4)
-  useEffect(() => {
-    ReactGA.initialize("YOUR_GA4_MEASUREMENT_ID");  // Sem vložte své ID měření GA4
-    ReactGA.send("pageview");  // Posílá první zobrazení stránky
-  }, []);
+//   // Inicializace Google Analytics (GA4)
+//   useEffect(() => {
+//     ReactGA.initialize("YOUR_GA4_MEASUREMENT_ID");  // Sem vložte své ID měření GA4
+//     ReactGA.send("pageview");  // Posílá první zobrazení stránky
+//   }, []);
 
   // Funkce pro otevření mobilního menu
   const menuHandler = () => {

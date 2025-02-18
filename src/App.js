@@ -95,17 +95,11 @@ const App = () => {
   const [visible, setVisible] = useState(false);
   const [isConsentGiven, setIsConsentGiven] = useState(false); // Stav pro souhlas s cookies
 
-  useEffect(() => {
-    const cookieConsent = Cookies.get("cookie-consent");
-    if (cookieConsent === "true") {
-      setIsConsentGiven(true); // Pokud uživatel souhlasil
-    }
-  }, []);
-
   // Funkce pro inicializaci Google Analytics
   const initializeGA = () => {
     const trackingId = "G-TQN22C7RSV"; // Změňte na svůj Google Analytics ID
     ReactGA.initialize(trackingId); // Inicializace Google Analytics
+    trackPageView(window.location.pathname); // Sleduje načtení stránky pouze při souhlasu
   };
 
   // Funkce pro nenačítání Google Analytics při odmítnutí
@@ -113,12 +107,21 @@ const App = () => {
     console.log("Google Analytics nebylo načteno.");
   };
 
+  // Efekt pro spuštění Google Analytics pouze po souhlasu
+  useEffect(() => {
+    // Kontrola, jestli již byl souhlas s cookies udělen
+    const cookieConsent = Cookies.get("cookie-consent");
+    if (cookieConsent === "true") {
+      setIsConsentGiven(true); // Pokud uživatel souhlasil
+    }
+  }, []);
+
+  // Aktivace Google Analytics pouze po souhlasu
   useEffect(() => {
     if (isConsentGiven) {
       initializeGA(); // Inicializuje GA pouze, pokud souhlas byl dán
-      trackPageView(window.location.pathname); // Sleduje načtení stránky pouze při souhlasu
     }
-  }, [isConsentGiven]); // Aktivace pouze při změně souhlasu
+  }, [isConsentGiven]);
 
   // Funkce pro scroll na začátek stránky
   const toggleVisible = () => {
