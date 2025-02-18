@@ -1,25 +1,25 @@
-import { Link } from "react-scroll"
-import { useState, useEffect } from "react"
-import ReactGA from "react-ga4" // Import GA4 knihovny
+import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
+import ReactGA from "react-ga4"; // Import GA4 knihovny
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
-import image from "../images/image0podalsikompresi.webp"
+import image from "../images/image0podalsikompresi.webp";
 
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import { AsyncImage } from 'loadable-image'
-import { Blur } from 'transitions-kit'
+import { AsyncImage } from 'loadable-image';
+import { Blur } from 'transitions-kit';
 
 const Header = ({ onEmailClick }) => {
   const [showNav, setShowNav] = useState(true);
 
   // Inicializace Google Analytics (GA4)
   useEffect(() => {
-    ReactGA.initialize("YOUR_GA4_MEASUREMENT_ID");  // Sem vlož ID měření GA4
+    ReactGA.initialize("YOUR_GA4_MEASUREMENT_ID");  // Sem vložte své ID měření GA4
     ReactGA.send("pageview");  // Posílá první zobrazení stránky
   }, []);
 
@@ -30,7 +30,7 @@ const Header = ({ onEmailClick }) => {
 
   // Funkce pro sledování kliknutí na navigační odkazy
   const handleNavClick = (label) => {
-    ReactGA.send("event", {
+    ReactGA.event({
       category: "Navigation",
       action: "Clicked Navigation Link",
       label: label,
@@ -39,7 +39,7 @@ const Header = ({ onEmailClick }) => {
 
   // Funkce pro sledování kliknutí na sociální sítě
   const handleSocialClick = (platform) => {
-    ReactGA.send("event", {
+    ReactGA.event({
       category: "Social Media",
       action: `Clicked ${platform} Link`,
       label: platform,
@@ -205,7 +205,7 @@ const Header = ({ onEmailClick }) => {
         </a>
         <MdEmail
           onClick={() => {
-            ReactGA.send("event", {
+            ReactGA.event({
               category: "Contact",
               action: "Clicked Email Button",
               label: "Email Contact",

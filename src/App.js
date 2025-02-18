@@ -12,8 +12,9 @@ import { trackPageView } from "./utils/analytics"; // Import trackování
 import { FaArrowCircleUp } from "react-icons/fa";
 
 // Komponenta pro cookies banner
-const CookiesBanner = ({ onAccept }) => {
+const CookiesBanner = ({ onAccept, onReject }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isDarkened, setIsDarkened] = useState(true); // Stav pro ztmavení obrazovky
 
   useEffect(() => {
     // Kontrola, jestli uživatel souhlasil s cookies
@@ -27,31 +28,66 @@ const CookiesBanner = ({ onAccept }) => {
     // Uložení souhlasu do cookies na 365 dní
     Cookies.set("cookie-consent", "true", { expires: 365 });
     setIsVisible(false); // Skrýt banner
+    setIsDarkened(false); // Zrušení ztmavení obrazovky
     onAccept(); // Volání funkce pro inicializaci GA
+  };
+
+  const handleReject = () => {
+    // Uložení odmítnutí do cookies na 365 dní (nebudou sbírány cookies)
+    Cookies.set("cookie-consent", "false", { expires: 365 });
+    setIsVisible(false); // Skrýt banner
+    setIsDarkened(false); // Zrušení ztmavení obrazovky
+    onReject(); // Pokud odmítne, GA nebude inicializováno
   };
 
   if (!isVisible) return null; // Pokud banner není vidět, nic nezobrazíme
 
   return (
-    <div style={styles.banner}>
-      <p>Na tomto webu používáme cookies pro zlepšení služby. Pokračováním souhlasíte s jejich používáním.</p>
-      <button onClick={handleAccept}>Souhlasím</button>
+    <div>
+      {/* Ztmavení obrazovky */}
+      {isDarkened && <div style={styles.overlay}></div>}
+      
+      <div style={styles.banner}>
+        <p>Na tomto webu používáme cookies pro zlepšení služby. Pokračováním souhlasíte s jejich používáním.</p>
+        
+        {/* Tlačítka pro souhlas a odmítnutí */}
+        <div>
+          <button className="bg-red-500 text-white p-2 rounded mr-4" onClick={handleAccept}>
+            Souhlasím
+          </button>
+          <button className="bg-red-500 text-white p-2 rounded" onClick={handleReject}>
+            Odmítnout
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
 
-// Styling pro banner
+// Styling pro banner a overlay
 const styles = {
   banner: {
     position: "fixed",
-    bottom: 0,
-    left: 0,
-    width: "100%",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
     color: "white",
-    padding: "10px",
+    padding: "20px",
     textAlign: "center",
     zIndex: 9999,
+    borderRadius: "10px",
+    width: "80%",
+    maxWidth: "400px",
+  },
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Mírně tmavší pozadí
+    zIndex: 9998,
   },
 };
 
@@ -62,6 +98,11 @@ const App = () => {
   const initializeGA = () => {
     const trackingId = "G-TQN22C7RSV"; // Změňte na svůj Google Analytics ID
     ReactGA.initialize(trackingId); // Inicializace Google Analytics
+  };
+
+  // Funkce pro nenačítání Google Analytics při odmítnutí
+  const rejectGA = () => {
+    console.log("Google Analytics nebylo načteno.");
   };
 
   useEffect(() => {
@@ -97,7 +138,7 @@ const App = () => {
 
   return (
     <div className="overflow-hidden">
-      <CookiesBanner onAccept={initializeGA} /> {/* Přidání cookies banneru */}
+      <CookiesBanner onAccept={initializeGA} onReject={rejectGA} /> {/* Přidání cookies banneru */}
       
       <div>
         {visible && (
