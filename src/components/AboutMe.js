@@ -1,6 +1,6 @@
-import image1 from "../images/prvni.webp"
-import image2 from "../images/druhy_1.webp"
-import image3 from "../images/treti_1.webp"
+import image1 from "../images/prvnipokompresi.webp"
+import image2 from "../images/druhy_1pokompresi.webp"
+import image3 from "../images/treti_1pokompresi.webp"
 import { AsyncImage } from 'loadable-image'
 import { Blur } from 'transitions-kit'
 
