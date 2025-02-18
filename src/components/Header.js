@@ -6,7 +6,7 @@ import { useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
-import image from "../images/image0.jpeg"
+import image from "../images/image0.webp"
 
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
